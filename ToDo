@@ -1,0 +1,4 @@
+- Dep on Class::Field
+- Dep on SUPER.pm
+- Dep on self.pm
+- Optional to dep on Moose or Mouse
