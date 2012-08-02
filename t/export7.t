@@ -2,16 +2,16 @@ use Test::More;
 
 plan tests => 4;
 
-package B;
+package BBB;
 use Spiffy -Base, -XXX;
 
-package A;
+package AAA;
 use Spiffy -Base;
 
 package main;
 
-ok(not defined &A::XXX);
-ok(defined &A::field);
+ok(not defined &AAA::XXX);
+ok(defined &AAA::field);
 
-ok(defined &B::XXX);
-ok(defined &B::field);
+ok(defined &BBB::XXX);
+ok(defined &BBB::field);

@@ -1,8 +1,10 @@
 ---
 version: 0.31
-date:    
+date:    Thu Aug  2 11:11:11 PDT 2012
 changes:
 - Bring Makefile.PL up to date.
+- Make tests not use 'B" package. rt72542
+- Use Module::Package
 ---
 version: 0.30
 date:    Sun Jan 29 12:18:02 PST 2006

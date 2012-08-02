@@ -1,8 +1,8 @@
 use lib 't', 'lib';
-package A;
+package AAA;
 use Spiffy -Base;
 
-package B;
+package BBB;
 use Spiffy -Base;
 field foo => 42;
 
@@ -10,6 +10,6 @@ field foo => 42;
 package main;
 use Test::More tests => 1;
 
-my $a = A->new;
-$a->mixin('B');
+my $a = AAA->new;
+$a->mixin('BBB');
 is($a->foo, 42);

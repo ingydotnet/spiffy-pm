@@ -2,22 +2,22 @@ use lib 't';
 use strict;
 use warnings;
 
-package A;
+package AAA;
 use Spiffy -base;
-BEGIN {@A::EXPORT_OK = qw($A1 $A2)}
-$A::A1 = 5;
-$A::A2 = 10;
+BEGIN {@AAA::EXPORT_OK = qw($A1 $A2)}
+$AAA::A1 = 5;
+$AAA::A2 = 10;
 
-package B;
-use base 'A';
-BEGIN {@B::EXPORT_OK = qw($A2 $A3)}
-$B::A2 = 15;
-$B::A3 = 20;
+package BBB;
+use base 'AAA';
+BEGIN {@BBB::EXPORT_OK = qw($A2 $A3)}
+$BBB::A2 = 15;
+$BBB::A3 = 20;
 
 package main;
 no warnings;
 use Test::More tests => 7;
-BEGIN {B->import(qw($A1 $A2 $A3 $A4))}
+BEGIN {BBB->import(qw($A1 $A2 $A3 $A4))}
 ok(defined $main::A1);
 ok(defined $main::A2);
 ok(defined $main::A3);

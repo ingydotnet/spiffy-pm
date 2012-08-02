@@ -3,23 +3,23 @@ use strict;
 use warnings;
 use Spiffy ();
 
-package A;
+package AAA;
 use Spiffy -Base;
 
 sub AUTOLOAD {
     super;
-    join '+', $A::AUTOLOAD, @_;
+    join '+', $AAA::AUTOLOAD, @_;
 }
 
-package B;
-use base 'A';
+package BBB;
+use base 'AAA';
 
 sub AUTOLOAD {
     super;
 }
 
-package C;
-use base 'B';
+package CCC;
+use base 'BBB';
 
 sub AUTOLOAD {
     super;
@@ -28,4 +28,4 @@ sub AUTOLOAD {
 package main;
 use Test::More tests => 1;
 
-is(C->foo(42), 'C::foo+42');
+is(CCC->foo(42), 'CCC::foo+42');

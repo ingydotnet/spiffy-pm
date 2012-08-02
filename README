@@ -6,7 +6,7 @@ SYNOPSIS
         use Spiffy -Base;
         field 'mirth';
         const mood => ':-)';
-    
+
         sub happy {
             if ($self->mood eq ':-(') {
                 $self->mirth(-1);
@@ -174,24 +174,24 @@ Spiffy MIXINs & ROLEs
     and then chains the new class into your SI ISA path. In other words, if
     you say:
 
-        package A;
-        use B -base;
-        use C -mixin;
-        use D -mixin;
+        package AAA;
+        use BBB -base;
+        use CCC -mixin;
+        use DDD -mixin;
 
     You end up with a single inheritance chain of classes like this:
 
-        A << A-D << A-C << B;
+        AAA << AAA-DDD << AAA-CCC << BBB;
 
-    "A-D" and "A-C" are the actual package names of the generated classes.
-    The nice thing about this style is that mixing in C doesn't clobber any
-    methods in A, and D doesn't conflict with A or C either. If you mixed in
-    a method in C that was also in A, you can still get to it by using
-    "super".
+    "AAA-DDD" and "AAA-CCC" are the actual package names of the generated
+    classes. The nice thing about this style is that mixing in CCC doesn't
+    clobber any methods in AAA, and DDD doesn't conflict with AAA or CCC
+    either. If you mixed in a method in CCC that was also in AAA, you can
+    still get to it by using "super".
 
-    When Spiffy mixes in C, it pulls in all the methods in C that do not
-    begin with an underscore. Actually it goes farther than that. If C is a
-    subclass it will pull in every method that C "can" do through
+    When Spiffy mixes in CCC, it pulls in all the methods in CCC that do not
+    begin with an underscore. Actually it goes farther than that. If CCC is
+    a subclass it will pull in every method that CCC "can" do through
     inheritance. This is very powerful, maybe too powerful.
 
     To limit what you mixin, Spiffy borrows the concept of Roles from Perl6.
@@ -200,14 +200,14 @@ Spiffy MIXINs & ROLEs
     and negation. If the first element of your list uses negation, Spiffy
     will start with all the methods that your mixin class can do.
 
-        use E -mixin => qw(:tools walk !run !:sharp_tools);
+        use EEE -mixin => qw(:tools walk !run !:sharp_tools);
 
-    In this example, "walk" and "run" are methods that E can do, and "tools"
-    and "sharp_tools" are roles of class E. How does class E define these
-    roles? It very simply defines methods called "_role_tools" and
-    "_role_sharp_tools" which return lists of more methods. (And possibly
-    other roles!) The neat thing here is that since roles are just methods,
-    they too can be inherited. Take that Perl6!
+    In this example, "walk" and "run" are methods that EEE can do, and
+    "tools" and "sharp_tools" are roles of class EEE. How does class EEE
+    define these roles? It very simply defines methods called "_role_tools"
+    and "_role_sharp_tools" which return lists of more methods. (And
+    possibly other roles!) The neat thing here is that since roles are just
+    methods, they too can be inherited. Take that Perl6!
 
 Spiffy FILTERING
     By using the "-Base" flag instead of "-base" you never need to write the
@@ -314,7 +314,7 @@ Spiffy FUNCTIONS
 
             package Example;
             use Spiffy -Base;
-    
+
             field 'foo';
             field bar => [];
 
@@ -486,15 +486,13 @@ Spiffy TODO LIST
     well, might be removed.
 
 AUTHOR
-    Ingy döt Net <ingy@cpan.org>
+    Ingy döt Net <ingy@ingy.net>
 
-COPYRIGHT
-    Copyright (c) 2006, 2011. Ingy döt Net. All rights reserved.
-
-    Copyright (c) 2004. Brian Ingerson. All rights reserved.
+COPYRIGHT AND LICENSE
+    Copyright (c) 2004, 2006, 2011, 2012. Ingy döt Net.
 
     This program is free software; you can redistribute it and/or modify it
     under the same terms as Perl itself.
 
-    See <http://www.perl.com/perl/misc/Artistic.html>
+    See http://www.perl.com/perl/misc/Artistic.html
 
