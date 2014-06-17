@@ -1,0 +1,27 @@
+=meta: 0.0.1
+
+name: Spiffy
+version: 0.32
+abstract: Spiffy Perl Interface Framework For You
+homepage: https://metacpan.org/release/Spiffy
+
+license: perl
+copyright: 2004-2014. Ingy döt Net.
+author:
+  name: Ingy döt Net
+  email: you@your.name
+  github: ingydotnet
+  twitter: ingydotnet
+  freenode: ingy
+  homepage: http://ingy.net
+
+requires:
+  perl: 5.6.1
+  Pre::Req: 0
+
+devel:
+  git: git@github.org/ingydotnet/spiffy-pm
+  irc: irc.freenode.net/ingy
+  bug: https://github.com/ingydotnet/spiffy-pm/issues/
+
+=travis: perl

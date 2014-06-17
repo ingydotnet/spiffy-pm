@@ -1,6 +1,6 @@
-use lib 't', 'lib';
-use strict;
-use warnings;
+use strict; use warnings;
+use File::Basename;
+use lib dirname(__FILE__), 'inc';
 
 package XXX;
 BEGIN {require Thing}

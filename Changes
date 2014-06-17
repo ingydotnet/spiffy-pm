@@ -1,4 +1,9 @@
 ---
+version: 0.32
+date:    Tue Jun 17 13:18:12 PDT 2014
+changes:
+- Release with Zilla::Dist
+---
 version: 0.31
 date:    Thu Aug  2 11:11:11 PDT 2012
 changes:

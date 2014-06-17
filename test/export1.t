@@ -1,7 +1,9 @@
+use strict; use warnings;
+use File::Basename;
+use lib dirname(__FILE__), 'inc';
+
 package Foo;
-use strict;
 use Test::More tests => 20;
-use lib 't';
 use Something;
 
 ok(not defined &Foo::import);
