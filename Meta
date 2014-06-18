@@ -17,7 +17,6 @@ author:
 
 requires:
   perl: 5.6.1
-  Pre::Req: 0
 
 devel:
   git: git@github.org/ingydotnet/spiffy-pm
