@@ -1,4 +1,9 @@
 ---
+version: 0.34
+date:    Wed Jun 18 11:08:07 PDT 2014
+changes:
+- Ship with a META.json file (close #1)
+---
 version: 0.33
 date:    Wed Jun 18 09:50:05 PDT 2014
 changes:
