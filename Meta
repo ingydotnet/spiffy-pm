@@ -1,7 +1,7 @@
 =meta: 0.0.1
 
 name: Spiffy
-version: 0.34
+version: 0.35
 abstract: Spiffy Perl Interface Framework For You
 homepage: https://metacpan.org/release/Spiffy
 
@@ -19,8 +19,8 @@ requires:
   perl: 5.6.1
 
 devel:
-  git: git@github.org/ingydotnet/spiffy-pm
-  irc: irc.freenode.net/ingy
-  bug: https://github.com/ingydotnet/spiffy-pm/issues/
+  git: http://github.com/ingydotnet/spiffy-pm
+  bug: https://github.com/ingydotnet/spiffy-pm/issues
+  irc: irc.freenode.net#ingy
 
 =travis: perl
