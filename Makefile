@@ -11,18 +11,23 @@ PERL ?= $(shell which perl)
 ZILD := $(PERL) -S zild
 
 ifneq (,$(shell which zild))
+    NAMEPATH := $(shell $(ZILD) meta =cpan/libname)
+ifeq (,$(NAMEPATH))
+    NAMEPATH := $(shell $(ZILD) meta name)
+endif
     NAME := $(shell $(ZILD) meta name)
     VERSION := $(shell $(ZILD) meta version)
     RELEASE_BRANCH := $(shell $(ZILD) meta branch)
 else
     NAME := No-Name
+    NAMEPATH := $(NAME)
     VERSION := 0
     RELEASE_BRANCH := master
 endif
 
 DISTDIR := $(NAME)-$(VERSION)
 DIST := $(DISTDIR).tar.gz
-NAMEPATH := $(subst -,/,$(NAME))
+NAMEPATH := $(subst -,/,$(NAMEPATH))
 SUCCESS := "$(DIST) Released!!!"
 
 default: help
@@ -71,7 +76,7 @@ prereqs:
 
 update: makefile
 	@echo '***** Updating/regenerating repo content'
-	make readme contrib travis version
+	make readme contrib travis version webhooks
 
 release: clean update check-release date test disttest
 	@echo '***** Releasing $(DISTDIR)'
@@ -149,6 +154,9 @@ clean purge:
 check-release:
 	@echo '***** Checking readiness to release $(DIST)'
 	RELEASE_BRANCH=$(RELEASE_BRANCH) zild-check-release
+	git stash
+	git pull --rebase origin $(RELEASE_BRANCH)
+	git stash pop
 
 # We don't want to update the Makefile in Zilla::Dist since it is the real
 # source, and would be reverting to whatever was installed.
@@ -171,3 +179,6 @@ date:
 
 version:
 	$(PERL) -S zild-version-update
+
+webhooks:
+	$(PERL) -S zild webhooks

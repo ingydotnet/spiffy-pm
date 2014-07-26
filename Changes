@@ -1,4 +1,9 @@
 ---
+version: 0.36
+date:    Sat Jul 26 12:01:35 PDT 2014
+changes:
+- Fix email in Meta
+---
 version: 0.35
 date:    Mon Jul 21 17:15:27 PDT 2014
 changes:

@@ -1,7 +1,7 @@
 =meta: 0.0.1
 
 name: Spiffy
-version: 0.35
+version: 0.36
 abstract: Spiffy Perl Interface Framework For You
 homepage: https://metacpan.org/release/Spiffy
 
@@ -9,7 +9,7 @@ license: perl
 copyright: 2004-2014. Ingy döt Net.
 author:
   name: Ingy döt Net
-  email: you@your.name
+  email: ingy@cpan.org
   github: ingydotnet
   twitter: ingydotnet
   freenode: ingy
@@ -23,4 +23,6 @@ devel:
   bug: https://github.com/ingydotnet/spiffy-pm/issues
   irc: irc.freenode.net#ingy
 
-=travis: perl
+=travis:
+  type: perl
+  irc: irc.freenode.net#ingy
