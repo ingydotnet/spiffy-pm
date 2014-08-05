@@ -10,6 +10,10 @@ See http://github.com/ingydotnet/swim-pm#readme
 
 Spiffy - Spiffy Perl Interface Framework For You
 
+=for html
+<a href="https://travis-ci.org/ingydotnet/spiffy-pm"><img src="https://travis-ci.org/ingydotnet/spiffy-pm.png" alt="spiffy-pm"></a>
+<a href="https://coveralls.io/r/ingydotnet/spiffy-pm?branch=master"><img src="https://coveralls.io/repos/ingydotnet/spiffy-pm/badge.png" alt="spiffy-pm"></a>
+
 =head1 SYNOPSIS
 
     package Keen;

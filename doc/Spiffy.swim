@@ -3,6 +3,8 @@ Spiffy
 
 Spiffy Perl Interface Framework For You
 
+<badge travis coveralls ingydotnet/spiffy-pm>
+
 = Synopsis
 
   package Keen;
