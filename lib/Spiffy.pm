@@ -1,6 +1,6 @@
 use strict; use warnings;
 package Spiffy;
-our $VERSION = '0.39';
+our $VERSION = '0.40';
 
 use Carp;
 require Exporter;
@@ -221,7 +221,8 @@ sub field {
     my $code = $code{sub_start};
     if ($args->{-init}) {
         my $fragment = $args->{-weak} ? $code{weak_init} : $code{init};
-        $code .= sprintf $fragment, $field, $args->{-init}, ($field) x 4;
+        my @count = ($fragment =~ /(%s)/g);
+        $code .= sprintf $fragment, $field, $args->{-init}, ($field) x (@count - 2);
     }
     $code .= sprintf $code{set_default}, $field, $default_string, $field
       if defined $default;

@@ -1,4 +1,9 @@
 ---
+version: 0.40
+date:    Wed Aug  6 10:29:46 PDT 2014
+changes:
+- Fix a bug that was causing lots of warnings in Test::Base on perl 5.21
+---
 version: 0.39
 date:    Tue Aug  5 10:13:52 PDT 2014
 changes:
