@@ -1,6 +1,5 @@
 use strict; use warnings;
-use File::Basename;
-use lib dirname(__FILE__), 'inc';
+use lib (-e 't' ? 't' : 'test'), 'inc';
 
 use Test::More tests => 1;
 use Spiffy -filter_save;

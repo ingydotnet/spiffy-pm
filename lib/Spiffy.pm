@@ -1,6 +1,6 @@
 use strict; use warnings;
 package Spiffy;
-our $VERSION = '0.43';
+our $VERSION = '0.44';
 
 use Carp;
 require Exporter;
