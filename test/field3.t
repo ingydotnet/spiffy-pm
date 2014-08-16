@@ -19,7 +19,7 @@ my @expected = map { s/\r//g; $_ } split /\.\.\.\r?\n/, join '', <DATA>;
 
 my $i = 1;
 for my $expected (@expected) {
-    is(eval '$test' . $i++, $expected);    
+    is(eval '$test' . $i++, $expected);
 }
 
 __DATA__
