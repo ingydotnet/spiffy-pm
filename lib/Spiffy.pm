@@ -498,8 +498,8 @@ sub spiffy_dump {
     no warnings;
     if ($dump eq 'dumper') {
         require Data::Dumper;
-        $Data::Dumper::Sortkeys = 1;
-        $Data::Dumper::Indent = 1;
+        local $Data::Dumper::Sortkeys = 1;
+        local $Data::Dumper::Indent = 1;
         return Data::Dumper::Dumper(@_);
     }
     require YAML;
